@@ -74,3 +74,6 @@ playwright-report/
 test-results/
 tmp/
 temp/
+
+# Internal files of github spec 
+.github/.specify/*
