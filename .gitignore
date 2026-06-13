@@ -76,4 +76,4 @@ tmp/
 temp/
 
 # Internal files of github spec 
-.github/.specify/*
+.specify/*
