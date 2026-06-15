@@ -48,7 +48,7 @@ Antes de considerar uma entrega pronta:
 
 ## Development Workflow
 
-O trabalho deve seguir ciclos curtos: entender o comportamento esperado, identificar riscos, escrever ou ajustar testes, implementar, verificar e revisar o impacto no produto. A implementacao deve preferir padroes ja existentes no repositorio e introduzir novas dependencias apenas quando reduzirem complexidade real ou risco.
+O trabalho deve seguir ciclos curtos: entender o comportamento esperado, identificar riscos, escrever ou ajustar testes, implementar, verificar e revisar o impacto no produto. A implementacao deve preferir padroes ja existentes no repositorio e introduzir novas dependencias apenas quando reduzirem complexidade real ou risco. As implementações devem seguir o modelo do TDD, atuando primeiro na escrita dos testes e posteriormente na construção do código de negócio
 
 Especificacoes devem descrever o resultado do ponto de vista do usuario e os criterios de aceitacao devem ser testaveis. Planos devem explicitar estrutura de arquivos, estrategia de testes, impactos de UX e performance. Tarefas devem ser pequenas o suficiente para revisao objetiva e agrupadas por valor entregue.
 
