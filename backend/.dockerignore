@@ -1,0 +1,13 @@
+target/
+build/
+.gradle/
+.mvn/
+
+*.log
+*.db
+*.sqlite
+*.sqlite3
+
+.env
+.env.*
+.DS_Store

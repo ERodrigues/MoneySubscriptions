@@ -8,8 +8,10 @@ RUN mvn -q -DskipTests package
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
+RUN addgroup --system app && adduser --system --ingroup app app
 COPY --from=build /workspace/target/*.jar app.jar
 
+USER app
 EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
