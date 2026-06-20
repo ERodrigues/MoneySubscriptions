@@ -5,9 +5,9 @@ specs/
 
 node_modules/
 .next/
-out/
-dist/
 coverage/
+dist/
+out/
 playwright-report/
 test-results/
 

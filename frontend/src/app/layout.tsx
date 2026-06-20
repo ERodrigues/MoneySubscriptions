@@ -3,14 +3,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "MoneySubscriptions",
-  description: "Controle pessoal de assinaturas e custos recorrentes",
+  description: "Controle de assinaturas e custos recorrentes"
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  children
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR">
       <body>{children}</body>

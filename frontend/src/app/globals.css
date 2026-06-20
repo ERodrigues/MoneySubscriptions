@@ -1,4 +1,11 @@
 :root {
+  --bg: #f6f3ed;
+  --surface: rgba(255, 255, 255, 0.72);
+  --text: #1f2d2f;
+  --muted: #5c6b67;
+  --accent: #af4d2f;
+  --border: rgba(31, 45, 47, 0.12);
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   color-scheme: light;
   background: #f7f8fa;
   color: #1f2933;
@@ -12,6 +19,18 @@
 }
 
 body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(175, 77, 47, 0.16), transparent 32%),
+    linear-gradient(180deg, #f8efe1 0%, #f6f3ed 46%, #eef1ea 100%);
+}
+
+.app-shell {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 64px;
   min-height: 100vh;
   margin: 0;
   background: #f7f8fa;
@@ -25,11 +44,16 @@ body {
 
 .page-header {
   max-width: 720px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
 }
 
 .eyebrow {
-  margin: 0 0 8px;
-  color: #2f6f73;
+  margin: 0 0 12px;
+  color: var(--accent);
   font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -37,13 +61,64 @@ body {
 
 h1 {
   margin: 0 0 12px;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.05;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 1.02;
 }
 
 p {
   margin: 0;
-  color: #52616b;
-  font-size: 1rem;
+  color: var(--muted);
   line-height: 1.6;
+}
+
+.ui-field {
+  display: grid;
+  gap: 8px;
+}
+
+.ui-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.ui-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text);
+}
+
+.ui-input:focus {
+  outline: 2px solid rgba(175, 77, 47, 0.28);
+  border-color: var(--accent);
+}
+
+.ui-button {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ui-button--primary {
+  background: var(--accent);
+  color: #fff8f2;
+}
+
+.ui-button--secondary {
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text);
+}
+
+.ui-error {
+  color: #9f2f2f;
+  font-size: 0.875rem;
 }
