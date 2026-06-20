@@ -104,7 +104,7 @@ public class Subscription {
         updatedAt = Instant.now();
     }
 
-    void validateState() {
+    public void validateState() {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Subscription name is required");
         }
@@ -125,5 +125,70 @@ public class Subscription {
         if (cancelledAt != null && startedAt != null && cancelledAt.isBefore(startedAt)) {
             throw new IllegalArgumentException("Cancelled date cannot be before start date");
         }
+    }
+
+    public void update(
+            String name,
+            String description,
+            MoneyAmount monthlyCost,
+            SubscriptionStatus status,
+            SubscriptionType type,
+            PaymentMethod paymentMethod,
+            LocalDate startedAt,
+            LocalDate cancelledAt
+    ) {
+        this.name = name;
+        this.description = description;
+        this.monthlyCost = monthlyCost;
+        this.status = status;
+        this.type = type;
+        this.paymentMethod = paymentMethod;
+        this.startedAt = startedAt;
+        this.cancelledAt = cancelledAt;
+        validateState();
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public MoneyAmount getMonthlyCost() {
+        return monthlyCost;
+    }
+
+    public SubscriptionStatus getStatus() {
+        return status;
+    }
+
+    public SubscriptionType getType() {
+        return type;
+    }
+
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public LocalDate getStartedAt() {
+        return startedAt;
+    }
+
+    public LocalDate getCancelledAt() {
+        return cancelledAt;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public Instant getUpdatedAt() {
+        return updatedAt;
     }
 }

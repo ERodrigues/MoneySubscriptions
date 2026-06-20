@@ -68,7 +68,7 @@ public class PaymentMethod {
         updatedAt = Instant.now();
     }
 
-    void validateState() {
+    public void validateState() {
         if (kind == null) {
             throw new IllegalArgumentException("Payment method kind is required");
         }
@@ -88,5 +88,37 @@ public class PaymentMethod {
             return null;
         }
         return value.trim();
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public PaymentMethodKind getKind() {
+        return kind;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public String getInstitutionName() {
+        return institutionName;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public Instant getUpdatedAt() {
+        return updatedAt;
     }
 }

@@ -53,7 +53,7 @@ public class SubscriptionType {
         updatedAt = Instant.now();
     }
 
-    void validateState() {
+    public void validateState() {
         name = normalizeName(name);
     }
 
@@ -62,5 +62,25 @@ public class SubscriptionType {
             throw new IllegalArgumentException("Subscription type name is required");
         }
         return value.trim();
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public Instant getUpdatedAt() {
+        return updatedAt;
     }
 }
